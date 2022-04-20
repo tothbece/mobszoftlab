@@ -13,13 +13,13 @@
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="hu.bme.aut.android.kimiquotes.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
+        android:name="hu.bme.aut.android.kimiquotes.ui.newquote.NewQuoteFragment"
+        android:label="@string/title_newquote"
         tools:layout="@layout/fragment_dashboard" />
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="hu.bme.aut.android.kimiquotes.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
+        android:name="hu.bme.aut.android.kimiquotes.ui.details.DetailsFragment"
+        android:label="@string/title_details"
         tools:layout="@layout/fragment_notifications" />
 </navigation>

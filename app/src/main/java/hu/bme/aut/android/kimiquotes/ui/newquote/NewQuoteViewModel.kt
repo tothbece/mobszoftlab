@@ -1,13 +1,13 @@
-package hu.bme.aut.android.kimiquotes.ui.notifications
+package hu.bme.aut.android.kimiquotes.ui.newquote
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class NotificationsViewModel : ViewModel() {
+class NewQuoteViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is notifications Fragment"
+        value = "This is dashboard Fragment"
     }
     val text: LiveData<String> = _text
 }
