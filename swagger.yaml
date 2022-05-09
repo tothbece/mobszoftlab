@@ -1,0 +1,78 @@
+swagger: "2.0"
+info:
+  description: "Mobilszoftver labor házi feladatának API-ja."
+  version: "1.0.0"
+  title: "KimiQuotes App"
+  contact:
+    email: "tothbece@gmail.com"
+host: "kimiquotes.herokuapp.com"
+schemes:
+- "https"
+tags:
+- name: "quote"
+  description: "Idézetekkel kapcsolatos végpontok"
+paths:
+  /quotes:
+    get:
+      summary: "Összes idézet lekérdezése"
+      tags:
+      - "quote"
+      produces:
+      - "application/json"
+      responses:
+        "200":
+          description: "Sikeres művelet."
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Quote"
+  /quote:
+    get:
+      summary: "Véletlenszerű idézet lekérdezése"
+      tags:
+      - "quote"
+      produces:
+      - "application/json"
+      responses:
+        "200":
+          description: "Sikeres művelet."
+          schema:
+            items:
+              $ref: "#/definitions/Quote"
+    post:
+      summary: "Új idézet felvétele"
+      tags:
+      - "quote"
+      produces:
+      - "application/json"
+      consumes:
+      - "application/json"
+      parameters:
+      - name: "quote"
+        in: "body"
+        schema:
+          type: "object"
+          properties:
+            quote:
+              type: "string"
+            year:
+              type: "integer"
+              format: "int64"
+      responses:
+        "201":
+          description: "Sikeres művelet."
+
+definitions:
+  Quote:
+    type: "object"
+    properties:
+      id:
+        type: "integer"
+        format: "int64"
+      quote:
+        type: "string"
+      year:
+        type: "integer"
+        format: "int64"
+    xml:
+      name: "Quote"
