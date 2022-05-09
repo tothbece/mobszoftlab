@@ -15,6 +15,7 @@ paths:
   /quotes:
     get:
       summary: "Összes idézet lekérdezése"
+      operationId: "handleGetQuotes"
       tags:
       - "quote"
       produces:
@@ -29,6 +30,7 @@ paths:
   /quote:
     get:
       summary: "Véletlenszerű idézet lekérdezése"
+      operationId: "handleGetRandomQuote"
       tags:
       - "quote"
       produces:
@@ -41,6 +43,7 @@ paths:
               $ref: "#/definitions/Quote"
     post:
       summary: "Új idézet felvétele"
+      operationId: "handlePostQuote"
       tags:
       - "quote"
       produces:
