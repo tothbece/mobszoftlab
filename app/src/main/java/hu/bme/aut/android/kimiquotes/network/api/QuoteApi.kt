@@ -9,7 +9,7 @@
 * https://github.com/swagger-api/swagger-codegen.git
 * Do not edit the class manually.
 */
-package io.swagger.client.apis
+package hu.bme.aut.android.kimiquotes.network.api
 
 import hu.bme.aut.android.kimiquotes.network.model.Quote
 import retrofit2.Response
