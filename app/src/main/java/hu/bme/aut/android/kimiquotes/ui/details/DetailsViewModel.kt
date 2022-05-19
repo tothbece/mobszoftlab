@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModel
 class DetailsViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is notifications Fragment"
+        value = "Az applikáció Kimi Raikonnen legszellemesebb idézeteit tartalmazza. Készítette: Tóth Bence (GLVBSB)"
     }
     val text: LiveData<String> = _text
 }
