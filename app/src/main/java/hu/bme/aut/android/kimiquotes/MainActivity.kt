@@ -3,6 +3,10 @@ package hu.bme.aut.android.kimiquotes
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.compose.runtime.Composable
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
@@ -10,12 +14,13 @@ import androidx.navigation.ui.setupWithNavController
 import dagger.hilt.android.AndroidEntryPoint
 import dagger.hilt.android.HiltAndroidApp
 import hu.bme.aut.android.kimiquotes.databinding.ActivityMainBinding
+import hu.bme.aut.android.kimiquotes.ui.home.HomeFragment
+import hu.bme.aut.android.kimiquotes.ui.home.HomeViewModel
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -34,5 +39,16 @@ class MainActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+    }
+}
+
+@Composable
+fun Main() {
+    val navController = rememberNavController()
+    NavHost(navController, startDestination = "home"){
+        composable("home") {
+            HomeFragment()
+        }
     }
 }
