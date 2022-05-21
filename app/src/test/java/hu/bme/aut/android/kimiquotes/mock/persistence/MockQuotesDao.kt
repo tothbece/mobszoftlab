@@ -4,15 +4,31 @@ import hu.bme.aut.android.kimiquotes.persistence.KimiQuotesDao
 import hu.bme.aut.android.kimiquotes.persistence.Quote
 
 class MockQuotesDao: KimiQuotesDao {
+    companion object {
+        private val  quotes = mutableListOf<Quote>()
+    }
+
     override fun getAll(): List<Quote> {
-        TODO("Not yet implemented")
+        return quotes
     }
 
     override fun getFavourites(): List<Quote> {
-        TODO("Not yet implemented")
+        val list = mutableListOf<Quote>()
+        quotes.forEach {
+            if (it.favourite) {
+                list.add(it)
+            }
+        }
+        return list
     }
 
-    override fun insertAll(vararg quotes: Quote) {
-        TODO("Not yet implemented")
+    override fun insertAll(vararg quotesIn: Quote) {
+        quotesIn.forEach {
+            quotes.add(it)
+        }
+    }
+
+    override fun deleteAll() {
+        quotes.clear()
     }
 }

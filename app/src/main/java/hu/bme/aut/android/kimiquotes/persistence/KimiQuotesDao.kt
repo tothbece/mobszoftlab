@@ -14,4 +14,7 @@ interface KimiQuotesDao {
 
     @Insert
     fun insertAll(vararg quotes: Quote)
+
+    @Query("DELETE FROM quote")
+    fun deleteAll()
 }
