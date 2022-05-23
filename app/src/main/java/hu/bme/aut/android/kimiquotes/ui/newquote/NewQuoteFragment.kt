@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import hu.bme.aut.android.kimiquotes.databinding.FragmentDashboardBinding
@@ -28,10 +29,10 @@ class NewQuoteFragment : Fragment() {
         _binding = FragmentDashboardBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textDashboard
-        dashboardViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
+        binding.button.setOnClickListener {
+            Toast.makeText(context, "Created", Toast.LENGTH_SHORT).show()
         }
+
         return root
     }
 
