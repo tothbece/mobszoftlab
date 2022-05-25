@@ -3,6 +3,8 @@ package hu.bme.aut.android.kimiquotes.persistence
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
+import dagger.Provides
+import javax.inject.Singleton
 
 @Dao
 interface KimiQuotesDao {

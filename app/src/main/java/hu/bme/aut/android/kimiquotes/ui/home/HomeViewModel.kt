@@ -16,7 +16,7 @@ import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 @HiltViewModel
-class HomeViewModel @Inject constructor(private val homeRepository: HomeRepository) : ViewModel() {
+class HomeViewModel @Inject constructor(private val interactor: QuotesInteractor) : ViewModel() {
     val quotes: MutableLiveData<List<Quote>> by lazy {
         MutableLiveData<List<Quote>>().also {
             loadQuotes()
@@ -31,12 +31,10 @@ class HomeViewModel @Inject constructor(private val homeRepository: HomeReposito
 
 }
 
-@Module
-@InstallIn(ViewModelComponent::class)
 class QuotesInteractor @Inject constructor(
-    private val dao: KimiQuotesDao
+    /*private val dao: KimiQuotesDao*/
 ) {
-    suspend fun getQuotes(): List<Quote> = withContext(Dispatchers.IO){
+    /*suspend fun getQuotes(): List<Quote> = withContext(Dispatchers.IO){
         dao.getAll()
-    }
+    }*/
 }
